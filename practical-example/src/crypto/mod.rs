@@ -9,7 +9,7 @@ pub trait Cryptable {
 }
 
 pub struct HashedValue {
-    pub value: String
+    pub value: String,
 }
 
 impl HashedValue {
@@ -17,7 +17,6 @@ impl HashedValue {
         self.value.clone()
     }
 }
-
 
 pub fn crypto_blake2<T: Cryptable>(input: T) -> HashedValue {
     // ソルトをパスワードに追加
@@ -33,6 +32,4 @@ pub fn crypto_blake2<T: Cryptable>(input: T) -> HashedValue {
     let hashed_val = hex::encode(result);
 
     input.hashed(hashed_val)
-
-  
 }

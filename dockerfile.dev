@@ -11,4 +11,6 @@ RUN apt update -y && \
 RUN mkdir -p /.rust/target
 ENV CARGO_TARGET_DIR=/.rust/target
 
+RUN rustup component add rustfmt
+
 WORKDIR /app

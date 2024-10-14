@@ -2,7 +2,6 @@ use crypto::{Cryptable, HashedValue};
 
 pub mod crypto;
 
-
 // テスト用のCryptableな型を定義
 pub struct TestCryptable {
     value: String,
@@ -17,15 +16,12 @@ impl Cryptable for TestCryptable {
     }
 }
 
-
-
 #[cfg(test)]
 mod tests {
     use crypto::crypto_blake2;
 
     use super::*;
 
-    
     #[test]
     fn test_crypto_blake2() {
         // テスト用のCryptableオブジェクトを作成
