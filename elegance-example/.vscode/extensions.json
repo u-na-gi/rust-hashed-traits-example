@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "rust-lang.rust-analyzer",
+    "tamasfe.even-better-toml",
+    "humao.rest-client",
+    "justjavac.vscode-deno-extensionpack",
+  ]
+}

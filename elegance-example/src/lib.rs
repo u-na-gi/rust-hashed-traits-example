@@ -1,4 +1,4 @@
-use crypto::{Cryptable, HashedValue};
+use crypto::{Cryptable, Hashed};
 
 pub mod crypto;
 
@@ -7,12 +7,24 @@ pub struct TestCryptable {
     value: String,
 }
 
+pub struct TestHashed {
+    value: String,
+}
+
+impl Hashed for TestHashed {
+    fn get_hashed_value(&self) -> String {
+        self.value.clone()
+    }
+}
+
 impl Cryptable for TestCryptable {
+    type Hashed = TestHashed;
+
     fn get_value(&self) -> String {
         self.value.clone()
     }
-    fn hashed(&self, hashed_val: String) -> HashedValue {
-        HashedValue { value: hashed_val }
+    fn hashed(&self, hashed_val: String) -> TestHashed {
+        TestHashed { value: hashed_val }
     }
 }
 
