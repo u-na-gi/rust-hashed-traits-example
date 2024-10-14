@@ -1,0 +1,13 @@
+services:
+    rust-hashed-traits-example:
+      image: rust-hashed-traits-example
+      build:
+        context: .
+        dockerfile: dockerfile.dev
+      volumes:
+        - ./:/app
+        - ~/.gitconfig:/root/.gitconfig
+        - ~/.ssh:/root/.ssh
+      working_dir: /app
+      platform: linux/amd64
+      tty: true
