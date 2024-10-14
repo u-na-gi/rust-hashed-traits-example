@@ -1,0 +1,1 @@
+# rust-hashed-traits-example
